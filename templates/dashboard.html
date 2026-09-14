@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block content %}
+<h2>Dashboard</h2>
+{% if session.role in ['Admin','Setter'] %}<a class="button" href="{{ url_for('upload') }}">Upload Question Paper</a>{% endif %}
+<table><tr><th>Title</th><th>Uploaded By</th><th>Exam Time</th><th>Action</th></tr>
+{% for p in papers %}<tr><td>{{ p.title }}</td><td>{{ p.uploaded_by }}</td><td>{{ p.exam_time }}</td>
+<td>{% if session.role in ['Admin','Examiner'] %}<a href="{{ url_for('download', paper_id=p.id) }}">Download</a>{% else %}View only{% endif %}</td></tr>{% endfor %}
+</table>
+<h3>Recent Audit Logs</h3><table><tr><th>User</th><th>Action</th><th>Details</th><th>Time</th></tr>
+{% for l in logs %}<tr><td>{{ l.username }}</td><td>{{ l.action }}</td><td>{{ l.details }}</td><td>{{ l.created_at }}</td></tr>{% endfor %}</table>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<div class="card"><h2>Upload Question Paper</h2>
+<form method="post" enctype="multipart/form-data">
+<label>Paper Title</label><input name="title" required>
+<label>Scheduled Exam Time</label><input type="datetime-local" name="exam_time" required>
+<label>Question Paper</label><input type="file" name="paper" accept=".pdf,.doc,.docx" required>
+<button>Encrypt and Upload</button>
+</form></div>{% endblock %}

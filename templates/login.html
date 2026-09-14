@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<div class="card small"><h2>Login</h2>
+<form method="post">
+<label>Username</label><input name="username" required>
+<label>Password</label><input type="password" name="password" required>
+<button>Login</button>
+</form>
+<p class="hint">Demo users: admin/admin123, setter/setter123, examiner/examiner123</p>
+</div>{% endblock %}

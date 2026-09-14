@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+database.db
+fernet.key
+encrypted_files/
+.env

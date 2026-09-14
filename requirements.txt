@@ -1,0 +1,5 @@
+Flask
+Werkzeug
+cryptography
+azure-storage-blob
+gunicorn
